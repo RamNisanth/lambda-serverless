@@ -1,0 +1,30 @@
+name: Deploy Python Lambda with API Gateway
+
+on:
+  push:
+    branches:
+      - main  # Replace with your branch name if different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Install Serverless Framework
+      run: npm install -g serverless
+
+    - name: Package Lambda Function
+      run: |
+        cd lambda
+        zip -r ../function.zip .  # Package everything in the lambda folder
+        cd ..
+
+    - name: Deploy to AWS Lambda
+      run: serverless deploy
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: us-east-1  # Specify your AWS region
