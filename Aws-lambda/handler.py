@@ -19,10 +19,10 @@ def lambda_function(event, context):
         response = requests.get(url, timeout=10)  # Add timeout for better error handling
         if response.status_code == 200:
             print(f"Website is up: {url}")
-            URL_RESPONSE['Status'] = "Up"
+            URL_RESPONSE['Status'] = "Uppp!!!!!"
         else:
             print(f"Website is down (HTTP {response.status_code}): {url}")
-            URL_RESPONSE['Status'] = "Down"
+            URL_RESPONSE['Status'] = "Downnn"
     except requests.exceptions.RequestException as e:
         print(f"Error checking website: {e}")
         URL_RESPONSE['Status'] = "Error"
@@ -53,7 +53,7 @@ def lambda_function(event, context):
                 URL_RESPONSE['ExpiryDate'] = ssl_expiry_date.strftime("%Y-%m-%d %H:%M:%S")
             else:
                 print(f"SSL certificate for {url} is valid.")
-                URL_RESPONSE['Expiry'] = "Not_Expired"
+                URL_RESPONSE['Expiry'] = "Not_Expired!!!"
                 URL_RESPONSE['ExpiryDate'] = ssl_expiry_date.strftime("%Y-%m-%d %H:%M:%S")
     except Exception as e:
         print(f"Error checking SSL certificate: {e}")
