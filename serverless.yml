@@ -21,6 +21,7 @@ package:
   include:
     - Lambda-Function/**"
   exclude:
+    - Lambda-Function/
     - .serverless/**
     - .git/**
     - .github/**
