@@ -17,10 +17,14 @@ functions:
           path: /
           method: get
 package:
+  individually: true
   include:
-    - "**/*"
+    - Aws-lambda/**"
   exclude:
     - .serverless/**
     - .git/**
+    - .github/**
     - "*.md"
+    - serverless.yml
+    - function.zip
     

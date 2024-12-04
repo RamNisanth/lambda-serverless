@@ -19,7 +19,7 @@ jobs:
     - name: Package Lambda Function
       run: |
         cd Aws-lambda
-        zip -r ../function.zip .  # Package everything in the lambda folder
+        zip -r ../function.zip *  # Package everything in the lambda folder
         cd ..
 
     - name: Deploy to AWS Lambda
