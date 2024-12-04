@@ -1,7 +1,7 @@
 # "org" ensures this Service is used with the correct Serverless Framework Access Key.
 org: ramnisanth
 # "service" is the name of this project. This will also be added to your AWS resource names.
-service: Aws-lambda
+service: Lambda-Function
 
 provider:
   name: aws
@@ -19,7 +19,7 @@ functions:
 package:
   individually: true
   include:
-    - Aws-lambda/**"
+    - Lambda-Function/**"
   exclude:
     - .serverless/**
     - .git/**

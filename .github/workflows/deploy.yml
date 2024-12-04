@@ -18,7 +18,7 @@ jobs:
 
     - name: Package Lambda Function
       run: |
-        cd Aws-lambda
+        cd Lambda-Function
         zip -r ../function.zip *  # Package everything in the lambda folder
         cd ..
 
