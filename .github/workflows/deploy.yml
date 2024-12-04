@@ -3,7 +3,7 @@ name: Deploy Python Lambda with API Gateway
 on:
   push:
     branches:
-      - git_work  # Replace with your branch name if different
+      - main  # Replace with your branch name if different
 
 jobs:
   deploy:
