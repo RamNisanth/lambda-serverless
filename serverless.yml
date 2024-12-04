@@ -1,0 +1,26 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: ramnisanth
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: Aws-lambda
+
+provider:
+  name: aws
+  runtime: python3.12
+  deploymentBucket:
+    name: ram-nisanth-serverless
+
+functions:
+  lambda_function:
+    handler: handler.lambda_function
+    events:
+      - httpApi:
+          path: /
+          method: get
+package:
+  include:
+    - "**/*"
+  exclude:
+    - .serverless/**
+    - .git/**
+    - "*.md"
+    
