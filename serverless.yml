@@ -17,15 +17,5 @@ functions:
           path: /
           method: get
 package:
-  individually: true
-  include:
-    - Lambda-Function-dev-lambda_function.zip
-  exclude:
-    - Lambda-Function
-    - .serverless/**
-    - .git/**
-    - .github/**
-    - "*.md"
-    - serverless.yml
-    
+  artifact: ./Lambda-Function-dev-lambda_function.zip
     
